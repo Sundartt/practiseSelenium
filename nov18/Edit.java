@@ -15,7 +15,7 @@ public class Edit {
          driver.manage().window().maximize();
          driver.findElement(By.xpath("//input[@id='email']")).sendKeys("kavivijay2015@gmail.com");
          driver.findElement(By.xpath("//input[@value='Append ']")).sendKeys("vijay");
-         String attribute = driver.findElement(By.className("username")).getAttribute("value");
+         String attribute = driver.findElement(By.name("username")).getAttribute("value");
          System.out.println(attribute);
          driver.findElement(By.xpath("//input[@value='Clear me!!']")).clear();
          boolean displayed = driver.findElement(By.xpath("(//input[@type='text'])[5]")).isDisplayed();
