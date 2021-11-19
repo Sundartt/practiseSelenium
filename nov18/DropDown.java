@@ -18,21 +18,29 @@ public class DropDown {
         driver.get("http://leafground.com/pages/Dropdown.html");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-        
         WebElement findElement = driver.findElement(By.id("dropdown1"));
-        Select se=new Select(findElement);
-        se.selectByIndex(1);
+        Select se1=new Select(findElement);
+        se1.selectByIndex(1);
         
-        WebElement findElement2 = driver.findElement(By.id("dropdown2"));
-        Select see =new Select(findElement2);
-        see.deselectByVisibleText("Appium");
+        WebElement findElement2 = driver.findElement(By.name("dropdown2"));
+        Select se2 =new Select(findElement2);
+        se2.selectByVisibleText("Appium");
         
         WebElement findElement3 = driver.findElement(By.id("dropdown3"));
-        Select seee=new Select(findElement3);
-        se.selectByValue("3");
-
-  
+        Select se3=new Select(findElement3);
+        se3.selectByValue("3"); 
         
-	}
+        WebElement findElement4 = driver.findElement(By.xpath("//select[@class='dropdown']"));
+        Select se4=new Select(findElement4);
+        List<WebElement> options = se4.getOptions();
+        int size = options.size();
+        System.out.println(size);
+        
+        driver.findElement(By.xpath("(//div[@class='example'])[5]//select")).sendKeys("UFT/QTP");
+        
+        driver.findElement(By.xpath("(//div[@class='example'])[6]//select/option[2]")).click();
+        
+
+        }
 
 }
