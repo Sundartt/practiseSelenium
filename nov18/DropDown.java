@@ -25,7 +25,7 @@ public class DropDown {
         
         WebElement findElement2 = driver.findElement(By.id("dropdown2"));
         Select see =new Select(findElement2);
-        se.deselectByVisibleText("Appium");
+        see.deselectByVisibleText("Appium");
         
         WebElement findElement3 = driver.findElement(By.id("dropdown3"));
         Select seee=new Select(findElement3);
